@@ -1,0 +1,21 @@
+td{
+  padding: 10px 20px 50px;
+  background: #C87F36;
+  border-width: 2px 4px 6px 8px; 
+  border: solid;
+  color: #000;
+
+}
+.div1{
+  border: solid;
+  padding: 10px;
+  color: #099;
+}
+
+.div2 {
+  height: 50%
+  width: 200px;
+  border: solid;
+  background: #C87F36;
+  margin: 15px;
+}

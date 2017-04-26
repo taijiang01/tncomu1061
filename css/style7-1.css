@@ -1,0 +1,35 @@
+
+.container{
+  height: 100px;
+width: 1170px;
+  background-color: #000;
+  /*padding: 20px;*/
+  /*margin: 0px 50px;*/
+}
+.bd{
+  /*border: solid 20px #0000FF;
+  background-color: #15DF27;*/
+  border: solid 30px #D82323;
+  background-color: #0000FF;
+  /*padding: 20px 100px;*/
+  padding-left: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 100px;
+  /*margin: 10px 100px 3px 100px;*/
+}
+ 
+.pd{
+  height: 100px;
+  width: 970px;
+  border: solid #15DF27;
+  background: yellow;
+  margin: -1px 100px 0px 100px;
+
+ 
+}
+.content{
+  /*background-color: #fff;
+  height: 100px;
+  padding: 10px;*/
+}
