@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>XOOPS可調式佈景開發</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    * {
+        font-family: 微軟正黑體;
+        font-size: 11pt;
+    }
+    
+    h1 {
+        font-family: 'kk1font';
+    }
+    
+    h2,
+    h3 {
+        font-family: 'kkfont';
+    }
+    
+    .parallax {
+        background: #000 url('images/bg.jpg') center center /cover no-repeat fixed;
+        padding: 30px 0px;
+        color: #fcfcfc;
+    }
+    
+    .parallax p,
+    .parallax h2,
+    .parallax h3 {
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, .9);
+    }
+    
+    .parallax small {
+        color: #cfcfcf;
+    }
+    
+    .parallax p {
+        font-size: 1.3em;
+        line-height: 1.8em;
+        text-align: justify;
+    }
+    
+    @font-face {
+        font-family: kkfont;
+        src: url('wanghanzong/王漢宗特明體一標準.ttf');
+    }
+    
+    @font-face {
+        font-family: kk1font;
+        src: url('華康2/華康中圆體B5.TTF');
+    }
+    
+    @font-face {
+        font-family: setofont;
+        src: url('setofont.ttf');
+    }
+    
+    .service_img {
+        width: 90%;
+        display: block;
+        margin: 0px auto;
+    }
+    
+    img.service_img + h2 {
+        text-align: center;
+    }
+    
+    #footer {
+        font-size: 1.5em;
+        padding: 30px 0px;
+        text-align: center;
+        color: #000;
+        margin-top: 30px;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        background: rgba(92, 164, 169, 0.9);
+    }
+    /*選單項目*/
+    
+    ul.nav>li>a {
+        color: white;
+    }
+    /*滑鼠移過選單項目時*/
+    
+    ul.nav>li>a:hover {
+        background-color: transparent;
+        border-bottom: 3px solid #ff7f00;
+    }
+    /*焦點在項目上時*/
+    
+    ul.nav>li>a:focus {
+        background-color: transparent;
+        border-bottom: 3px solid red;
+    }
+    /*開啟下拉選單時*/
+    
+    ul.nav>li.open>a,
+    ul.nav>li.open>a:hover,
+    ul.nav>li.open>a:focus {
+        background-color: transparent;
+        color: yellow;
+    }
+    .page-header{
+  padding-top:60px;
+}
+
+.navbar-brand,
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+        font-family: 'tadfont';
+        color: #c0d677;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, .9);
+    }
+
+    .navbar-toggle .icon-bar {
+        background-color: #fff;
+    }
+
+    .mini_menu {
+    padding-bottom: 10px;
+    background: #000 url('images/min-header.jpg') top left /cover;
+    border-bottom: 1px solid #156785;
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.4);
+}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#" id="">點兩下電腦工作室</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="#">首頁</a></li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">服務項目 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">XOOPS 網站架設</a></li>
+                        <li><a href="#">XOOPS 模組開發</a></li>
+                        <li><a href="#">XOOPS 佈景設計</a></li>
+                        <li><a href="#">XOOPS 維護升級</a></li>
+                    </ul>
+
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">關於我們 <span class="caret"></span></a>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">聯繫我們 <span class="caret"></span></a>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">工作室位置 <span class="caret"></span></a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+    <img src="images/header.jpg" alt="logo" class="visible-md visible-lg" style="width: 100%;">
+    <img src="images/header_xs.jpg" alt="logo" class="visible-xs visible-sm" style="width: 100%;">
+    <div class="container">
+        <div class="page-header">
+            <h1>點兩下電腦工作室<small>只要點兩下滑鼠，這個世界就能連起更多友善的網</small></h1>
+        </div>
+        <div class="page-header" id="service">
+            <h2>服務項目<small>Service</small></h2>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-xs-6">
+                <img src="images/canvas.svg" alt="xxx" class="service_img">
+                <h2>XOOPS 網站架設</h2>
+                <p>XOOPS 網站架設XOOPS 網站架設XOOPS 網站架設XOOPS 網站架設XOOPS 網站架設XOOPS 網站架設</p>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <img src="images/stationery.svg" alt="xxx" class="service_img">
+                <h2>XOOPS 模組開發</h2>
+                <p>XOOPS 模組開發XOOPS 模組開發XOOPS 模組開發XOOPS 模組開發XOOPS 模組開發XOOPS 模組開發</p>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <img src="images/graphic-design.svg" alt="xxx" class="service_img">
+                <h2>XOOPS 佈景設計</h2>
+                <p>XOOPS 佈景設計XOOPS 佈景設計XOOPS 佈景設計XOOPS 佈景設計XOOPS 佈景設計XOOPS 佈景設計</p>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <img src="images/swiss-army-knife.svg" alt="xxx" class="service_img">
+                <h2>XOOPS 維護升級</h2>
+                <p>XOOPS 維護升級XOOPS 維護升級XOOPS 維護升級XOOPS 維護升級XOOPS 維護升級XOOPS 維護升級</p>
+            </div>
+        </div>
+    </div>
+    <div class="parallax">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="images/DSCF2259.JPG" alt="ck2" class="img-thumbnail">
+                </div>
+                <div class="col-sm-6">
+                    <div class="page-header" id="about">
+                        <h2>關於我們<small>About us</small></h2>
+                    </div>
+                    <h3>【緣起】</h3>
+                    <p>XOOPS 正體中文延伸計畫網站的站長 Tad在台南社大任教三年後，成立了點兩下資訊社，讓有興趣從事網頁設計、網站架設、PHP程式開發、佈景設計的學員們得有更進一步學習的空間。</p>
+                    <p>在點兩下資訊社運做一年後，部份成員學有專精，但空有一身功夫卻無處發揮，甚為可惜。因此，在 Tad老師提議，經大夥兒討論後，成立了點兩下工作室。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-header" id="contact">
+                    <h2>聯繫我們<small>Contact</small></h2>
+                </div>
+                <form action="#" id="contact_form" class="form-horizontal">
+                    <div class="form-group has-success has-feedback">
+                        <label class="col-sm-3 control-label">姓名：</label>
+                        <div class="col-sm-4">
+                            <input type="text" name="user_name" placeholder="請輸入姓名" class="form-control">
+                            <span class="form-control-feedback">
+                              <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <label class="sr-only">性別：</label>
+                        <div class="col-sm-5">
+                            <label class="radio-inline">
+                                <input type="radio" name="user_sex" value="先生">先生
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="user_sex" value="女士">女士
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">問題類型：</label>
+                        <div class="col-sm-9">
+                            <select name="q_type" class="form-control">
+                                <option value="XOOPS 網站架設">XOOPS 網站架設</option>
+                                <option value="XOOPS 客製化模組開發">XOOPS 客製化模組開發</option>
+                                <option value="XOOPS 佈景設計">XOOPS 佈景設計</option>
+                                <option value="XOOPS 轉碼、升級">XOOPS 轉碼、升級</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">聯繫時間：</label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <span class="input-group-addon">從</span>
+                                <input type="date" class="form-control">
+                                <span class="input-group-addon">至</span>
+                                <input type="date" class="form-control">
+                                <span class="input-group-addon">止</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">留言：</label>
+                        <div class="col-sm-9">
+                            <textarea name="user_content" class="form-control" placeholder="請輸入您的意見"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">說明：</label>
+                        <div class="col-sm-6">
+                            <div class="form-control-static">網站問題，留下網址及帳密。</div>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="submit" class="btn btn-primary btn-sm btn-block">送出</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-6">
+                <div class="page-header" id="map">
+                    <h2>工作室位置<small>台南市南區文南路58號3F</small></h2>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.1012244164644!2d120.18788931431298!3d22.98330492356333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e76762fb96b2f%3A0xbe642a6276fc4524!2zNzAy5Y-w5Y2X5biC5Y2X5Y2A5paH5Y2X6LevNTjomZ8!5e0!3m2!1szh-TW!2stw!4v1491638671770" width="100%" height="230" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <p>Copyright © 2011-2017 安順電腦手機班</p>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.2.0.min.js "></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js "></script>
+
+    <script>
+  $(function() {
+      $(window).scroll(scroll_style);
+  });
+ 
+  function scroll_style() {
+      var window_top = $(window).scrollTop();
+      if (window_top > 2) {
+          $(".navbar").addClass("mini_menu");
+      } else {
+          $(".navbar").removeClass("mini_menu");
+      }
+  }
+</script>
+</body>
+
+</html>

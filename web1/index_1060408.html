@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>4.BootStrap響應式框架(上)</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    * {
+        font-family: '微軟正黑體';
+        font-size: 11pt;
+    }
+    
+    h1,
+    h2,
+    h3 {
+        font-family: 'kkfont';
+    }
+    
+    @font-face {
+        font-family: 'kkfont';
+        src: url('setofont.ttf');
+    }
+    
+    @font-face {
+        font-family: 'myfont';
+        src: url('wanghanzong/王漢宗超明體繁.ttf');
+    }
+    
+    .service_img {
+        width: 60%;
+        /*圖片置中_以下兩行*/
+        display: block;
+        margin: 0px auto;
+    }
+    
+    img.service_img + h2 {
+        text-align: center;
+    }
+    
+    #footer {
+        font-size: 1.5em;
+        padding: 30px 0px;
+        text-align: center;
+        color: #fff;
+        margin-top: 30px;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        background: #123456;
+    }
+    </style>
+</head>
+
+<body>
+    <img src="images/header.jpg" alt="xxx" class="img-responsive"> </img>
+    <div class="container">
+        <div class="page-header">
+            <h1>點兩下電腦工作室<small>只要點兩下滑鼠，這個世界就能連起更多友善的網</small></h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <img src="images/canvas.svg" alt="xxx" class="service_img">
+                <h2>XOOPS 網站架設</h2>
+                <p>XOOPS 網站架設XOOPS 網站架設XOOPS 網站架設XOOPS 網站架設XOOPS 網站架設XOOPS 網站架設</p>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <img src="images/swiss-army-knife.svg" alt="xxx" class="service_img">
+                <h2>XOOPS 模組開發</h2>
+                <p>XOOPS 模組開發XOOPS 模組開發XOOPS 模組開發XOOPS 模組開發XOOPS 模組開發XOOPS 模組開發</p>
+            </div>
+            <div class="clearfix visible-sm-block"></div>
+            <div class="col-sm-6 col-md-3">
+                <img src="images/graphic-design.svg" alt="xxx" class="service_img">
+                <h2>XOOPS 佈景設計</h2>
+                <p>XOOPS 佈景設計XOOPS 佈景設計XOOPS 佈景設計XOOPS 佈景設計XOOPS 佈景設計XOOPS 佈景設計</p>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <img src="images/stationery.svg" alt="xxx" class="service_img">
+                <h2>XOOPS 維護升級</h2>
+                <p>XOOPS 維護升級XOOPS 維護升級XOOPS 維護升級XOOPS 維護升級XOOPS 維護升級XOOPS 維護升級</p>
+            </div>
+        </div>
+        <div class="page-header">
+            <h2>關於我們<small>About us</small></h2>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="images/DSCF2259.JPG" alt="xxx" class="img-thumbnail">
+            </div>
+            <div class="col-sm-6">
+                <h3>【緣起】</h3>
+                <p>XOOPS 正體中文延伸計畫網站的站長 Tad在台南社大任教三年後，成立了點兩下資訊社，讓有興趣從事網頁設計、網站架設、PHP程式開發、佈景設計的學員們得有更進一步學習的空間。</p>
+                <p>在點兩下資訊社運做一年後，部份成員學有專精，但空有一身功夫卻無處發揮，甚為可惜。因此，在 Tad老師提議，經大夥兒討論後，成立了點兩下工作室。</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="page-header">
+                    <h2>聯繫我們<small>Contact</small></h2>
+                </div>
+                <form action="#" id="contact_form">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">姓名：</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="user_name" placeholder="請輸入姓名" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">性別：</label>
+                        <div class="col-sm-9">
+                            <input type="radio" name="user_sex" id="boy" value="先生">
+                            <label for="boy">先生</label>
+                            <input type="radio" name="user_sex" id="girl" value="女士">
+                            <label for="girl">女士</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">問題類型：</label>
+                        <div class="col-sm-9">
+                            <select name="q_type" class="form-control">
+                                <option value="XOOPS 網站架設">XOOPS 網站架設</option>
+                                <option value="XOOPS 客製化模組開發">XOOPS 客製化模組開發</option>
+                                <option value="XOOPS 佈景設計">XOOPS 佈景設計</option>
+                                <option value="XOOPS 轉碼、升級">XOOPS 轉碼、升級</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">留言：</label>
+                        <div class="col-sm-9">
+                            <textarea name="user_content" class="form-control" placeholder="請輸入您的意見"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-6">
+                <div class="page-header">
+                    <h2>工作室位置<small>台南市南區文南路58號3F</small></h2>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.101224416487!2d120.18788931482783!3d22.983304923562187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e76762fb96b2f%3A0xbe642a6276fc4524!2zNzAy6Ie65Y2X5biC5Y2X5Y2A5paH5Y2X6LevNTjomZ8!5e0!3m2!1szh-TW!2stw!4v1492782712907" width="100%" height="230" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <p>Copyright © 2011-2017 安順電腦手機班</p>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/js/jquery-3.2.0.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
