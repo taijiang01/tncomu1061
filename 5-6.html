@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>盒子模式 (box model)</title>
+    <!-- Bootstrap -->
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- <script src="js/jquery-3.2.1.min.js"></script> -->
+    <style type="text/css">
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    #b {
+        color: blue;
+    }
+    
+    .largefont {
+        color: #0066FF;
+        font-family: arial;
+        font-size: 36px;
+    }
+    
+    .dd {
+        border-top-style: solid;
+        border-bottom-style: dotted;
+        margin: 30px;
+    }
+    
+    .ss {
+        border-top-style: solid;
+        border-top-width: medium;
+        margin: 30px;
+    }
+    
+    .aa {
+        border-left-style: solid;
+        border-bottom-style: dashed;
+        border-bottom-color: #00FF00;
+        margin: 30px;
+    }
+    
+    a:link {
+      font-size: 30px;
+        color: #FF0000;
+        text-decoration: none;
+    }
+    
+    a:visited {
+        color: #0000FF;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        font-size: 50px;
+        color: #00FF00;
+        text-decoration: underline;
+    }
+    
+    a:active {
+        color: #FF00FF;
+        text-decoration: underline;
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <p>文字</p>
+            <li id="b">
+                文字顏色是藍色
+            </li>
+        </ul>
+    </div>
+    <span>代表在 &lt;li&gt; &lt;b&gt; 之內的文字是藍色的。不是在 &lt;li&gt; 之內的 &lt;b&gt; 中的文字，就不會套用藍色字體這個樣式。 </span>
+    <p style='font-family:verdana; font-size:16px;'>This is font size 16.</p>
+    <p style='font-family:verdana; font-size:30px;'>This is font size 30.</p>
+    Span 不是<span class="largefont">區塊級的</span>容器
+    <p class="dd">例 1：上邊框為實線，下邊框為點線</p>
+    </br>
+    <p class="ss">例 2：上邊框為實線，且寬度中等</p>
+    </br>
+    <p class="aa">例 3：左邊框為實線，下邊框為虛線，且顏色為綠色</p>
+    <a class="page1" href="https://taijiang02.github.io/site/web/12-7.html">測試連接</a>
+    <div>以上樣式的意思為：
+        <p>1) 一開始時，連接文字的顏色是紅色。</p>
+        <p>2) 一但被連接的頁面有被看過，連接文字顏色就變為藍色。</p>
+        <p>3) 當滑鼠蓋在連接上面時，文字大小變為 50，文字顏色變為綠色，而且下劃線會出現。</p>
+        <p>4) 當連接被點擊時，文字顏色變為粉紅色，而且下劃線不會消失。</p></div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+</body>
+
+</html>
